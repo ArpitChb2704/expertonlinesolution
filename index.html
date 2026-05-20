@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ExpertGuide | Official Amazon ATES Partner</title>
+    <meta content="Accelerate your Amazon sales growth by 20% with certified Amazon Trained E-Commerce Specialists." name="description"/>
+
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#723600",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#642f00",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d2e8dc",
+                        "primary-fixed-dim": "#bcc7dd",
+                        "on-primary-fixed": "#111c2c",
+                        "tertiary": "#000000",
+                        "surface": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed-dim": "#b6cbc0",
+                        "surface-container-high": "#dce9ff",
+                        "primary-container": "#111c2c",
+                        "success-mint": "#D9EFE3",
+                        "secondary": "#964900",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#c5c6cd",
+                        "tertiary-container": "#0c1f18",
+                        "surface-container-low": "#eff4ff",
+                        "surface-bright": "#f8f9ff",
+                        "trust-navy": "#0B1626",
+                        "outline": "#75777d",
+                        "secondary-fixed-dim": "#ffb786",
+                        "inverse-surface": "#213145",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface-variant": "#45474c",
+                        "background": "#f8f9ff",
+                        "surface-gray": "#F8FAFC",
+                        "on-tertiary-fixed": "#0c1f18",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#545f72",
+                        "primary-fixed": "#d8e3fa",
+                        "on-secondary-fixed": "#311300",
+                        "conversion-orange": "#F28123",
+                        "on-tertiary-fixed-variant": "#384b42",
+                        "surface-container": "#e5eeff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-container": "#7a8498",
+                        "primary": "#000000",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#74887e",
+                        "secondary-fixed": "#ffdcc7",
+                        "secondary-container": "#fe8a2c",
+                        "inverse-primary": "#bcc7dd",
+                        "on-primary-fixed-variant": "#3d4759"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "manrope": ["Manrope", "sans-serif"],
+                        "label-caps": ["Bebas Neue"],
+                        "headline-xl": ["Manrope"],
+                        "cta-text": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", {"lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "cta-text": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+        .bento-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .scroll-reveal {
+            transition: all 1000ms ease;
+            opacity: 0;
+            transform: translateY(32px);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- React and Dependencies -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+        // --- Custom Hook for Scroll Animations ---
+        const useScrollReveal = () => {
+            useEffect(() => {
+                const observerOptions = { threshold: 0.1 };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+        };
+
+        const ScrollToTop = () => {
+            const { pathname } = useLocation();
+            useEffect(() => {
+                window.scrollTo(0, 0);
+            }, [pathname]);
+            return null;
+        };
+
+        // --- Shared Components ---
+        const Header = () => {
+            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+            const location = useLocation();
+
+            const navLinks = [
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Our Services', path: '/services' },
+                { name: 'Contact Us', path: '/contact' }
+            ];
+
+            return (
+                <header class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
+                    <nav class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+                        <Link to="/" class="font-headline-md text-headline-md font-bold text-trust-navy">ExpertGuide</Link>
+                        <div class="hidden md:flex items-center gap-2">
+                            {navLinks.map(link => (
+                                <Link 
+                                    key={link.path}
+                                    to={link.path} 
+                                    className={`px-4 py-2 font-body-md text-body-md transition-colors ${
+                                        location.pathname === link.path 
+                                        ? "text-primary font-bold border-b-2 border-conversion-orange" 
+                                        : "text-on-surface-variant hover:text-secondary"
+                                    }`}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </div>
+                        <button 
+                            className="md:hidden text-trust-navy p-2"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        >
+                            <span class="material-symbols-outlined">{mobileMenuOpen ? 'close' : 'menu'}</span>
+                        </button>
+                    </nav>
+                    {/* Mobile Menu */}
+                    {mobileMenuOpen && (
+                        <div className="md:hidden bg-surface-container-lowest border-b border-outline-variant p-4 space-y-4">
+                            {navLinks.map(link => (
+                                <Link 
+                                    key={link.path}
+                                    to={link.path} 
+                                    className="block font-body-md text-on-surface-variant"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </header>
+            );
+        };
+
+        const Footer = () => (
+            <footer class="bg-trust-navy text-surface-bright pt-20 pb-10">
+                <div class="max-w-container-max mx-auto px-gutter">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                        <div class="space-y-6">
+                            <div class="font-headline-md text-headline-md font-bold">ExpertGuide</div>
+                            <p class="text-on-primary-container text-sm leading-relaxed">
+                                Professional Amazon Trained E-Commerce Specialist (ATES) services. We help you scale your business with precision and expert guidance.
+                            </p>
+                            <div class="flex gap-4">
+                                <a class="text-on-primary-container hover:text-conversion-orange transition-colors" href="#"><span class="material-symbols-outlined">facebook</span></a>
+                                <a class="text-on-primary-container hover:text-conversion-orange transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-conversion-orange">Services</h5>
+                            <ul class="space-y-4 text-sm text-on-primary-container">
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/services">Account Registration</Link></li>
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/services">Brand Registration</Link></li>
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/services">Category Approval</Link></li>
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/services">Product Listing</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-conversion-orange">Company</h5>
+                            <ul class="space-y-4 text-sm text-on-primary-container">
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/about">About Us</Link></li>
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/contact">Contact</Link></li>
+                                <li><a class="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a></li>
+                                <li><a class="hover:text-surface-bright transition-colors" href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-conversion-orange">Get in Touch</h5>
+                            <div class="flex gap-3 text-sm text-on-primary-container">
+                                <span class="material-symbols-outlined text-conversion-orange">mail</span>
+                                <p>info@amazonates.com</p>
+                            </div>
+                            <div class="flex gap-3 text-sm text-on-primary-container">
+                                <span class="material-symbols-outlined text-conversion-orange">call</span>
+                                <p>+91 7835060070</p>
+                            </div>
+                            <div class="flex gap-3 text-sm text-on-primary-container">
+                                <span class="material-symbols-outlined text-conversion-orange">location_on</span>
+                                <div>
+                                    <p class="font-bold">Delhi HQ</p>
+                                    <p>Plot No-4, 3rd Floor, South Ganesh Nagar, Delhi-110092</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-primary-container">
+                        <p>© 2024-2025 ExpertGuide. All rights reserved by amazonates.com</p>
+                        <div class="flex gap-6">
+                            <a class="hover:text-surface-bright" href="#">Sitemap</a>
+                            <a class="hover:text-surface-bright" href="#">Cookies Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        );
+
+        // --- Pages ---
+
+        const HomePage = () => {
+            useScrollReveal();
+            return (
+                <main>
+                    <section class="relative bg-trust-navy py-20 lg:py-32 overflow-hidden scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="relative z-10 space-y-6">
+                                <span class="inline-block font-label-caps text-label-caps text-conversion-orange tracking-widest bg-conversion-orange/10 px-3 py-1 rounded">Official ATES Partner</span>
+                                <h1 class="font-headline-xl text-headline-xl text-surface-bright leading-tight">
+                                    Accelerate Your Amazon Sales Growth by <span class="text-conversion-orange">20%</span>
+                                </h1>
+                                <p class="font-body-lg text-body-lg text-on-primary-container max-w-xl">
+                                    Scale without wasting money on expensive ads or time-consuming launch strategies. Leverage our certified Amazon Dream Team and industry-leading ATES specialists.
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                                    <Link to="/contact" class="bg-conversion-orange text-white px-8 py-4 rounded font-cta-text text-cta-text flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all shadow-lg shadow-conversion-orange/20">
+                                        Book a Consultation <span class="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                    <Link to="/services" class="border border-surface-variant text-surface-bright px-8 py-4 rounded font-cta-text text-cta-text flex items-center justify-center hover:bg-surface-variant/10 transition-all">
+                                        See Services
+                                    </Link>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="aspect-video bg-primary-container rounded-xl overflow-hidden shadow-2xl border border-outline/20">
+                                    <img alt="Amazon Success Metrics" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfgiJ_XfOE_-L3IUVgcKHLbw7nSv2Z3fj--S071hLJq_XeI3jhaIuw_ktcBcE9o8GAkkWxUUr4wQ9RRqCeKKwwc1wUtxJxOsmJXJ8gC6rWLRkCpNRMsYwFMTvZCDhTMPVANg7nhRBujh_dYlUcPQmc6jkf2N1wbtVjLL0d_tosRot1NU6loKMDu9luRO_UoCduzewBFoIw0GfNL9ELxHV5u0LnOBfIEDhCOOR6Ja35aJURHjO0mdAd-3LIhhRUwHQuUsdKIvbnp9c"/>
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-trust-navy to-transparent"></div>
+                                    <div class="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-conversion-orange rounded-full flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-white">trending_up</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-white font-bold text-xl">+20.4%</p>
+                                                <p class="text-white/60 text-sm">Avg. Growth Lift</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-surface scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="mb-12">
+                                <span class="font-label-caps text-label-caps text-secondary mb-2 block">Our Expertise</span>
+                                <h2 class="font-headline-lg text-headline-lg text-trust-navy">Your Amazon Dream Team, Under One Roof</h2>
+                                <p class="text-on-surface-variant mt-4 max-w-2xl font-body-md">With a team of 150+ specialists, we manage all aspects of Amazon Creatives and Advertising in-house.</p>
+                            </div>
+                            <div class="bento-grid">
+                                <div class="lg:col-span-2 lg:row-span-2 bg-trust-navy rounded-2xl p-10 flex flex-col justify-between relative overflow-hidden text-surface-bright">
+                                    <div>
+                                        <h3 class="font-headline-md text-headline-md mb-4">Data-Driven Creatives</h3>
+                                        <p class="font-body-md text-on-primary-container mb-6">Our Creatives don’t just look good; they're backed by data. On average, our designs increase conversion rates by 20%, directly driving sales growth.</p>
+                                        <ul class="space-y-3 font-body-md text-on-primary-container">
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-mint">check_circle</span> A/B Tested Visuals</li>
+                                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-mint">check_circle</span> Behavioral Psychology Design</li>
+                                        </ul>
+                                    </div>
+                                    <span class="material-symbols-outlined text-8xl opacity-10 absolute bottom-4 right-4">monitoring</span>
+                                </div>
+                                <div class="lg:col-span-2 bg-surface-container rounded-2xl p-8 border border-outline-variant flex flex-col justify-center">
+                                    <span class="material-symbols-outlined text-trust-navy text-4xl mb-4">public</span>
+                                    <h3 class="font-headline-md text-headline-md text-trust-navy mb-2">Worldwide Coverage</h3>
+                                    <p class="text-on-surface-variant font-body-md">Global studios and localized pickup services. We operate in your timezone.</p>
+                                </div>
+                                <div class="bg-success-mint/30 rounded-2xl p-8 border border-outline-variant">
+                                    <span class="material-symbols-outlined text-secondary text-2xl mb-4">verified_user</span>
+                                    <h4 class="font-headline-md text-trust-navy mb-2 text-lg">Certified ATES</h4>
+                                    <p class="text-on-surface-variant text-sm">Professional Amazon Trained Specialists.</p>
+                                </div>
+                                <div class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant">
+                                    <span class="material-symbols-outlined text-trust-navy text-2xl mb-4">settings_accessibility</span>
+                                    <h4 class="font-headline-md text-trust-navy mb-2 text-lg">Flexible Aspect</h4>
+                                    <p class="text-on-surface-variant text-sm">Custom packages for specific brand needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-trust-navy text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-16">
+                                <h2 class="font-headline-lg text-headline-lg mb-4">Browse by Business Need</h2>
+                                <p class="text-on-primary-container max-w-2xl mx-auto">From registration to analytics, we cover every stage.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {['Registration', 'Cataloging', 'Advertising', 'Analytics'].map(item => (
+                                    <Link to="/services" key={item} class="group p-8 rounded-xl border border-white/10 hover:bg-white/5 transition-all flex flex-col items-center text-center">
+                                        <span class="material-symbols-outlined text-4xl mb-6 group-hover:text-conversion-orange transition-colors">
+                                            {item === 'Registration' ? 'app_registration' : item === 'Cataloging' ? 'inventory_2' : item === 'Advertising' ? 'ads_click' : 'query_stats'}
+                                        </span>
+                                        <h4 class="font-headline-md text-headline-md mb-2">{item}</h4>
+                                        <p class="text-on-primary-container text-sm">Optimized professional {item.toLowerCase()} services.</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
+
+        const AboutPage = () => {
+            useScrollReveal();
+            return (
+                <main>
+                    <section class="relative bg-trust-navy py-20 lg:py-32 overflow-hidden scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <span class="inline-block bg-conversion-orange text-white px-3 py-1 font-label-caps text-label-caps">Amazon Trained Specialists</span>
+                                <h1 class="font-headline-xl text-headline-xl text-white">Selling on Amazon Was Never So Easy</h1>
+                                <p class="font-body-lg text-body-lg text-primary-fixed-dim opacity-90 max-w-lg">
+                                    ExpertGuide is introduced by Amazon to provide constant efforts to help Amazon sellers scale their online business.
+                                </p>
+                            </div>
+                            <div class="relative group">
+                                <img alt="Our Team" class="relative rounded-xl w-full h-[400px] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8swlV3pRVa3Yp_g4L4jC_3-HUxjU8AK0bC8C5pSRzZ5DrM3E4a5cUWXjFD22VCXEgnrtW7urWSYAoFJK1SLpPMKKZGSzc0Ku6TOBHw9KYDqfID4-JJ2yFATX8tDxk2f19hewY8e2BMCtHwnEtNR1MDt1l3ZIINMmpUrPpgCFjVRYaLgVW4T_kCISDfnBM5Z8nBE5SkdxFT5hyV8S1K9YG9lZFbuEFj_v_CacIWqC2oZ58DT0xe60sxQKzD4pkO3RLtN98ABPEQ28"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-surface-gray scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                                <div>
+                                    <h2 class="font-headline-lg text-headline-lg text-trust-navy mb-4">Your Amazon Dream Team</h2>
+                                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                        With a dedicated team of over 150+ specialists, we manage every single facet of your Amazon presence.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-4 border-l-4 border-conversion-orange pl-6">
+                                    <span class="font-headline-xl text-headline-xl text-trust-navy">150+</span>
+                                    <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">In-house<br/>Specialists</span>
+                                </div>
+                            </div>
+                            <div className="bento-grid-v2 grid grid-cols-1 md:grid-cols-12 gap-6">
+                                <div className="md:col-span-8 bg-white p-8 border border-outline-variant">
+                                    <h3 class="font-headline-md text-trust-navy mb-4">Data Driven Creatives</h3>
+                                    <p class="text-on-surface-variant">Our designs increase conversion rates by 20% on average.</p>
+                                </div>
+                                <div className="md:col-span-4 bg-trust-navy p-8 text-white flex flex-col justify-center items-center">
+                                    <div class="text-conversion-orange font-headline-xl text-headline-xl mb-2">20%</div>
+                                    <div class="font-label-caps text-label-caps opacity-80">Avg. Increase</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-white scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                                <div class="lg:col-span-5">
+                                    <img alt="Founder" class="rounded-lg shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiH_DEZ2ORlz6OZY2-0Ny5Rs2mTetcYVEEMrf1SF1eMkpmAQIWNye_KXE6mY0Feq6cib6fvvmH7JBJy9mKyXBrZQteSXmrYR02vonzS1QtXfQ4pOxyXESG7qly22LsAbcMsm46uA2gTnq9-WqdIJaajNpBzKR2uWf3ggG54dmRuf092JH20xlQhEvrlbFBstFgMH4jfFQha1GktDXwUD6wwaxPry0zHe_Kjr1w53kOvsstwqRggftfK6x7v-Afe5F868ye-CJG3Vc"/>
+                                </div>
+                                <div class="lg:col-span-7">
+                                    <h2 class="font-headline-lg text-trust-navy mb-6">A Message to Sellers</h2>
+                                    <p class="font-body-lg text-on-surface-variant mb-4 italic">"Scaling an Amazon business isn't easy. We understand these challenges because we live them every day."</p>
+                                    <p class="font-body-lg text-on-surface-variant">As an ATES specialist, I created ExpertGuide to offer the best service plans.</p>
+                                    <div class="mt-8">
+                                        <p class="font-bold text-trust-navy">Kamal</p>
+                                        <p class="text-sm opacity-60">Founder & Lead Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
+
+        const ServicesPage = () => {
+            const [openFaq, setOpenFaq] = useState(null);
+            useScrollReveal();
+
+            const services = [
+                { icon: 'how_to_reg', title: 'Account Registration', desc: 'Hassle-free setup of your seller account.' },
+                { icon: 'verified_user', title: 'Brand Registration', desc: 'Protect your intellectual property.' },
+                { icon: 'lock_open', title: 'Category Approval', desc: 'Professional ungating services.' },
+                { icon: 'list_alt', title: 'Product Listing', desc: 'SEO-optimized titles and descriptions.' }
+            ];
+
+            return (
+                <main>
+                    <section class="relative bg-trust-navy text-white py-20 scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <span class="font-label-caps text-label-caps bg-conversion-orange text-white px-3 py-1 rounded inline-block mb-6">CERTIFIED AMAZON SPECIALISTS</span>
+                                <h1 class="font-headline-xl text-headline-xl mb-6">Comprehensive Amazon Growth Services</h1>
+                                <p class="font-body-lg text-surface-variant mb-10">Handling complexity so you can focus on your brand.</p>
+                            </div>
+                            <img class="rounded-xl shadow-2xl hidden lg:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Wk0_ih_Zdu_K8kOVe28nAS6rpmV6DXUP57s6GWflLB5JIGZZZANyYDswRmI0tuikt83XRlkv0yu_ckKrHG8okjBmh94ZnzBWODhNimzjeLJCDYWK9VroPtZ_Qzmyv3iDbrubfRTG3MNKeD2Xl3hJ1E9-KSVrPQTgadPFZdPahqWJluM3VeFsB4por8e9wyyF5nnpQBSmwaWM95nlUDtiDnLJtc7ptKd6M1xTmSuXVDxcJtJoCzOcpsx01ScD63WFxwUHxDE1zo4" alt="Workspace"/>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-surface-gray scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                                {services.map(s => (
+                                    <div key={s.title} class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-conversion-orange transition-all">
+                                        <span class="material-symbols-outlined text-4xl text-trust-navy mb-6">{s.icon}</span>
+                                        <h3 class="font-headline-md text-trust-navy mb-3">{s.title}</h3>
+                                        <p class="text-on-surface-variant mb-6">{s.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-section-gap bg-surface-container-low scroll-reveal">
+                        <div class="max-w-3xl mx-auto px-gutter">
+                            <h2 class="text-center font-headline-lg text-trust-navy mb-12">Frequently Asked Questions</h2>
+                            <div class="space-y-4">
+                                {[
+                                    { q: "How do I get started?", a: "Book a call to assess needs, then ship samples to our studio." },
+                                    { q: "Do you need a sample?", a: "Yes, for creative packages to ensure high-quality output." },
+                                    { q: "Production timeline?", a: "Typically 3-4 weeks from receiving samples." }
+                                ].map((item, idx) => (
+                                    <div key={idx} class="bg-white border border-outline-variant rounded-xl overflow-hidden">
+                                        <button 
+                                            class="w-full px-8 py-6 text-left flex justify-between items-center"
+                                            onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                                        >
+                                            <span class="font-headline-md text-trust-navy">{item.q}</span>
+                                            <span class={`material-symbols-outlined transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}>expand_more</span>
+                                        </button>
+                                        {openFaq === idx && <div class="px-8 pb-6 text-on-surface-variant">{item.a}</div>}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
+
+        const ContactPage = () => {
+            const [submitted, setSubmitted] = useState(false);
+            useScrollReveal();
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                setSubmitted(true);
+                setTimeout(() => setSubmitted(false), 3000);
+            };
+
+            return (
+                <main class="min-h-screen">
+                    <section class="bg-trust-navy py-20 text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <span class="font-label-caps text-conversion-orange mb-4 block tracking-widest">GET IN TOUCH</span>
+                            <h1 class="font-headline-xl text-headline-xl mb-6">Expert Advice Is Just A Message Away.</h1>
+                        </div>
+                    </section>
+
+                    <section class="max-w-container-max mx-auto px-gutter -mt-16 pb-section-gap relative z-10 scroll-reveal">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+                            <div class="lg:col-span-5 space-y-gutter">
+                                <div class="bg-white p-10 border border-outline-variant shadow-sm space-y-8">
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-conversion-orange text-3xl">phone_in_talk</span>
+                                        <div><h3 class="font-headline-md mb-2">Speak With Us</h3><p class="font-bold">+91 7835060070</p></div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-conversion-orange text-3xl">mail</span>
+                                        <div><h3 class="font-headline-md mb-2">Email Inquiry</h3><p class="font-bold">info@amazonates.com</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 bg-white p-10 lg:p-16 border border-outline-variant shadow-sm">
+                                <h2 class="font-headline-lg mb-8">Send an Official Inquiry</h2>
+                                <form class="space-y-6" onSubmit={handleSubmit}>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <input class="w-full p-4 border border-outline-variant focus:ring-1 focus:ring-trust-navy" placeholder="Full Name" required />
+                                        <input class="w-full p-4 border border-outline-variant focus:ring-1 focus:ring-trust-navy" placeholder="Email Address" required type="email" />
+                                    </div>
+                                    <textarea class="w-full p-4 border border-outline-variant h-32" placeholder="Your Message" required></textarea>
+                                    <button 
+                                        type="submit"
+                                        disabled={submitted}
+                                        class={`w-full py-5 font-cta-text flex justify-center items-center gap-3 transition-all ${submitted ? 'bg-success-mint text-trust-navy' : 'bg-conversion-orange text-white hover:brightness-110'}`}
+                                    >
+                                        {submitted ? (
+                                            <React.Fragment><span class="material-symbols-outlined">check_circle</span> SENT</React.Fragment>
+                                        ) : (
+                                            <React.Fragment>SUBMIT INQUIRY <span class="material-symbols-outlined">send</span></React.Fragment>
+                                        )}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
+
+        // --- App Shell ---
+        const App = () => {
+            return (
+                <MemoryRouter>
+                    <ScrollToTop />
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/services" element={<ServicesPage />} />
+                        <Route path="/contact" element={<ContactPage />} />
+                    </Routes>
+                    <Footer />
+                </MemoryRouter>
+            );
+        };
+
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(<App />);
+    </script>
+</body>
+</html>
