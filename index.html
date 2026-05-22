@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>ExpertGuide | Official Amazon ATES Partner</title>
+    <title>Expert Ecom Solution</title>
     <meta content="Accelerate your Amazon sales growth by 20% with certified Amazon Trained E-Commerce Specialists." name="description"/>
 
     <!-- External Resources -->
@@ -192,13 +192,14 @@
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
                 { name: 'Our Services', path: '/services' },
+                { name: 'Packages', path: '/packages' },
                 { name: 'Contact Us', path: '/contact' }
             ];
 
             return (
                 <header class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
                     <nav class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
-                        <Link to="/" class="font-headline-md text-headline-md font-bold text-trust-navy">ExpertGuide</Link>
+                        <Link to="/" class="font-headline-md text-headline-md font-bold text-trust-navy">Expert Ecom Solution</Link>
                         <div class="hidden md:flex items-center gap-2">
                             {navLinks.map(link => (
                                 <Link 
@@ -267,6 +268,7 @@
                             <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-conversion-orange">Company</h5>
                             <ul class="space-y-4 text-sm text-on-primary-container">
                                 <li><Link className="hover:text-surface-bright transition-colors" to="/about">About Us</Link></li>
+                                <li><Link className="hover:text-surface-bright transition-colors" to="/packages">Packages</Link></li>
                                 <li><Link className="hover:text-surface-bright transition-colors" to="/contact">Contact</Link></li>
                                 <li><a class="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a></li>
                                 <li><a class="hover:text-surface-bright transition-colors" href="#">Terms of Service</a></li>
@@ -276,23 +278,23 @@
                             <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-conversion-orange">Get in Touch</h5>
                             <div class="flex gap-3 text-sm text-on-primary-container">
                                 <span class="material-symbols-outlined text-conversion-orange">mail</span>
-                                <p>info@amazonates.com</p>
+                                <p>expertecommercesolution2023.com</p>
                             </div>
                             <div class="flex gap-3 text-sm text-on-primary-container">
                                 <span class="material-symbols-outlined text-conversion-orange">call</span>
-                                <p>+91 7835060070</p>
+                                <p>+91 9560541200</p>
                             </div>
                             <div class="flex gap-3 text-sm text-on-primary-container">
                                 <span class="material-symbols-outlined text-conversion-orange">location_on</span>
                                 <div>
                                     <p class="font-bold">Delhi HQ</p>
-                                    <p>Plot No-4, 3rd Floor, South Ganesh Nagar, Delhi-110092</p>
+                                    <p>D131 2nd Floor, Expert Ecommerce Solution, South Ganesh Nagar, South, Block A, Mandawali, Ganesh Nagar 1, Delhi-110092</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-primary-container">
-                        <p>© 2024-2025 ExpertGuide. All rights reserved by amazonates.com</p>
+                        <p>© 2026 Expert Ecommerce Solution. All rights reserved by expertecommercesolution.com</p>
                         <div class="flex gap-6">
                             <a class="hover:text-surface-bright" href="#">Sitemap</a>
                             <a class="hover:text-surface-bright" href="#">Cookies Settings</a>
@@ -465,7 +467,7 @@
                                     <p class="font-body-lg text-on-surface-variant mb-4 italic">"Scaling an Amazon business isn't easy. We understand these challenges because we live them every day."</p>
                                     <p class="font-body-lg text-on-surface-variant">As an ATES specialist, I created ExpertGuide to offer the best service plans.</p>
                                     <div class="mt-8">
-                                        <p class="font-bold text-trust-navy">Kamal</p>
+                                        <p class="font-bold text-trust-navy">Neeraj Arora</p>
                                         <p class="text-sm opacity-60">Founder & Lead Specialist</p>
                                     </div>
                                 </div>
@@ -478,60 +480,537 @@
 
         const ServicesPage = () => {
             const [openFaq, setOpenFaq] = useState(null);
+            const [activeService, setActiveService] = useState(0);
             useScrollReveal();
 
             const services = [
-                { icon: 'how_to_reg', title: 'Account Registration', desc: 'Hassle-free setup of your seller account.' },
-                { icon: 'verified_user', title: 'Brand Registration', desc: 'Protect your intellectual property.' },
-                { icon: 'lock_open', title: 'Category Approval', desc: 'Professional ungating services.' },
-                { icon: 'list_alt', title: 'Product Listing', desc: 'SEO-optimized titles and descriptions.' }
+                {
+                    icon: 'inventory_2',
+                    title: 'Amazon Wholesale FBA',
+                    tagline: 'Turn Amazon into your profit machine.',
+                    desc: 'We handle product sourcing, supplier approvals, inventory management, and FBA fulfillment — end to end. You sit back and watch your passive income grow with our proven wholesale automation.',
+                    bullets: ['Supplier & Brand Research', 'FBA Shipment & Inventory Setup', 'Repricing & Buy Box Strategy', 'PPC Campaign Management', 'Monthly Performance Reporting'],
+                    color: 'bg-conversion-orange',
+                },
+                {
+                    icon: 'label',
+                    title: 'Amazon Private Label',
+                    tagline: 'Build your own profitable Amazon brand.',
+                    desc: 'From product research and branding to listings, fulfillment, and customer support — we handle everything. Our specialists turn your private label vision into a reliable, scalable income stream on Amazon.',
+                    bullets: ['Product Research & Validation', 'Supplier Sourcing & Sampling', 'Brand Identity & Logo Design', 'A+ Content & Brand Store', 'Launch & Scale Strategy'],
+                    color: 'bg-trust-navy',
+                },
+                {
+                    icon: 'storefront',
+                    title: 'Account Registration',
+                    tagline: 'Hassle-free Amazon seller account setup.',
+                    desc: 'We manage the entire Amazon seller account registration process — from documentation and verification to full activation. Our certified specialists ensure your account is set up correctly the first time.',
+                    bullets: ['Individual & Professional Account Setup', 'Document Verification Support', 'Brand Registry Enrollment', 'Category Approval & Ungating', 'Account Health Monitoring'],
+                    color: 'bg-secondary',
+                },
+                {
+                    icon: 'ads_click',
+                    title: 'Advertising & PPC',
+                    tagline: 'Data-driven ads that convert.',
+                    desc: 'Our Amazon Ads certified team creates and manages Sponsored Products, Sponsored Brands, DSP, and video advertising campaigns designed to maximize ROAS and reduce ACoS at every stage of growth.',
+                    bullets: ['Sponsored Products & Brands', 'DSP & Video Advertising', 'Keyword Research & Targeting', 'Bid Optimization & A/B Testing', 'Weekly Campaign Reports'],
+                    color: 'bg-conversion-orange',
+                },
+                {
+                    icon: 'list_alt',
+                    title: 'Product Listing & SEO',
+                    tagline: 'Listings that rank and convert.',
+                    desc: 'We create fully optimized product listings with keyword-rich titles, bullet points, and descriptions backed by data. Combined with A+ content and high-quality imagery, your products are built to dominate search results.',
+                    bullets: ['Keyword Research & Mapping', 'SEO-Optimized Titles & Bullets', 'A+ Enhanced Brand Content', 'Professional Product Photography', 'Competitor Gap Analysis'],
+                    color: 'bg-trust-navy',
+                },
+                {
+                    icon: 'support_agent',
+                    title: 'Virtual Assistants',
+                    tagline: 'Expert eCommerce VAs, on demand.',
+                    desc: 'Hire trained virtual assistants to manage your eCommerce operations — from product listings and order processing to customer support. Our VAs integrate seamlessly with your workflow so you can scale without overhead.',
+                    bullets: ['Order & Inventory Management', 'Customer Service & Reviews', 'Product Upload & Maintenance', 'Reporting & Analytics', 'Platform: Amazon, Walmart, Etsy, eBay'],
+                    color: 'bg-secondary',
+                },
             ];
+
+            const processSteps = [
+                { icon: 'flag', title: 'Strategic Planning', desc: 'We start by thoroughly understanding your goals to create a tailored eCommerce strategy that produces results.' },
+                { icon: 'query_stats', title: 'Data-Driven Research', desc: 'Our research-driven methodology integrates market analysis, product knowledge, and audience insights.' },
+                { icon: 'tune', title: 'Expert Optimization', desc: 'Using in-house tools and strategies, we optimize your listings and campaigns for maximum conversion.' },
+                { icon: 'emoji_events', title: 'Exceptional Results', desc: 'We regularly deliver outstanding outcomes — meeting and surpassing our clients\' growth expectations.' },
+            ];
+
+            const faqs = [
+                { q: "How do you launch and enhance my Amazon store?", a: "We set up your store from scratch and optimize it for visibility and sales. Our team ensures everything is structured for smooth operations and maximum growth from day one." },
+                { q: "What's your approach to product research and listing creation?", a: "We identify high-demand, low-competition products using advanced data tools, then create compelling, fully optimized listings designed to attract buyers and boost conversions." },
+                { q: "Do you manage pricing and stock levels?", a: "Yes — we handle pricing strategies and inventory updates automatically, keeping your store competitive and preventing out-of-stock situations." },
+                { q: "How soon can I see results?", a: "Most clients begin seeing measurable improvements within the first 30–60 days. Our process is designed for steady, sustainable growth rather than short-term spikes." },
+                { q: "Is your Amazon automation team experienced?", a: "Absolutely. Our team consists of Amazon Ads certified specialists, ATES-trained experts, and seasoned eCommerce professionals with years of hands-on seller experience." },
+            ];
+
+            const current = services[activeService];
 
             return (
                 <main>
-                    <section class="relative bg-trust-navy text-white py-20 scroll-reveal">
+                    {/* Hero */}
+                    <section class="relative bg-trust-navy text-white py-20 lg:py-28 overflow-hidden scroll-reveal">
                         <div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <span class="font-label-caps text-label-caps bg-conversion-orange text-white px-3 py-1 rounded inline-block mb-6">CERTIFIED AMAZON SPECIALISTS</span>
-                                <h1 class="font-headline-xl text-headline-xl mb-6">Comprehensive Amazon Growth Services</h1>
-                                <p class="font-body-lg text-surface-variant mb-10">Handling complexity so you can focus on your brand.</p>
+                            <div class="relative z-10 space-y-6">
+                                <span class="font-label-caps text-label-caps bg-conversion-orange text-white px-3 py-1 rounded inline-block">OUR E-COMMERCE SERVICES</span>
+                                <h1 class="font-headline-xl text-headline-xl text-white leading-tight">Grow Your Online Business, <span class="text-conversion-orange">Without the Hassle</span></h1>
+                                <p class="font-body-lg text-on-primary-container max-w-lg">Our smart automation and certified specialists handle orders, listings, advertising, and operations — so you can focus on expanding your brand and increasing revenue.</p>
+                                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                    <Link to="/contact" class="bg-conversion-orange text-white px-8 py-4 rounded font-cta-text text-cta-text flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+                                        Get Started Today <span class="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                    <Link to="/packages" class="border border-white/30 text-white px-8 py-4 rounded font-cta-text text-cta-text flex items-center justify-center hover:bg-white/10 transition-all">
+                                        View Packages
+                                    </Link>
+                                </div>
                             </div>
-                            <img class="rounded-xl shadow-2xl hidden lg:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Wk0_ih_Zdu_K8kOVe28nAS6rpmV6DXUP57s6GWflLB5JIGZZZANyYDswRmI0tuikt83XRlkv0yu_ckKrHG8okjBmh94ZnzBWODhNimzjeLJCDYWK9VroPtZ_Qzmyv3iDbrubfRTG3MNKeD2Xl3hJ1E9-KSVrPQTgadPFZdPahqWJluM3VeFsB4por8e9wyyF5nnpQBSmwaWM95nlUDtiDnLJtc7ptKd6M1xTmSuXVDxcJtJoCzOcpsx01ScD63WFxwUHxDE1zo4" alt="Workspace"/>
-                        </div>
-                    </section>
-
-                    <section class="py-section-gap bg-surface-gray scroll-reveal">
-                        <div class="max-w-container-max mx-auto px-gutter">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-                                {services.map(s => (
-                                    <div key={s.title} class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-conversion-orange transition-all">
-                                        <span class="material-symbols-outlined text-4xl text-trust-navy mb-6">{s.icon}</span>
-                                        <h3 class="font-headline-md text-trust-navy mb-3">{s.title}</h3>
-                                        <p class="text-on-surface-variant mb-6">{s.desc}</p>
+                            <div class="hidden lg:grid grid-cols-2 gap-4">
+                                {[
+                                    { num: '450+', label: 'Brands Managed' },
+                                    { num: '$1.2B+', label: 'Revenue Generated' },
+                                    { num: '150+', label: 'In-House Specialists' },
+                                    { num: '8+', label: 'Years Experience' },
+                                ].map(stat => (
+                                    <div key={stat.label} class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+                                        <div class="text-conversion-orange font-black text-3xl mb-1">{stat.num}</div>
+                                        <div class="text-on-primary-container text-sm">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </section>
 
-                    <section class="py-section-gap bg-surface-container-low scroll-reveal">
-                        <div class="max-w-3xl mx-auto px-gutter">
-                            <h2 class="text-center font-headline-lg text-trust-navy mb-12">Frequently Asked Questions</h2>
-                            <div class="space-y-4">
+                    {/* Process Steps */}
+                    <section class="py-16 bg-surface-container-low border-b border-outline-variant scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-10">
+                                <h2 class="font-headline-lg text-trust-navy">The Process Behind Our Success</h2>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {processSteps.map((step, i) => (
+                                    <div key={step.title} class="flex flex-col items-start gap-4 bg-white p-6 border border-outline-variant rounded-xl hover:border-conversion-orange transition-all">
+                                        <div class="w-10 h-10 bg-conversion-orange/10 rounded-full flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-conversion-orange">{step.icon}</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-bold text-conversion-orange mb-1 tracking-widest">STEP {i + 1}</div>
+                                            <h4 class="font-headline-md text-trust-navy mb-2">{step.title}</h4>
+                                            <p class="text-on-surface-variant text-sm">{step.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Services Detail — tab + content */}
+                    <section class="py-section-gap bg-surface scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-12">
+                                <span class="font-label-caps text-label-caps text-secondary mb-2 block">WHAT WE DO</span>
+                                <h2 class="font-headline-lg text-trust-navy">Our E-Commerce Services</h2>
+                                <p class="text-on-surface-variant mt-3 max-w-2xl mx-auto">From registration to advertising — we cover every stage of your Amazon journey.</p>
+                            </div>
+                            {/* Service Tab Buttons */}
+                            <div class="flex flex-wrap gap-3 justify-center mb-12">
+                                {services.map((s, i) => (
+                                    <button
+                                        key={s.title}
+                                        onClick={() => setActiveService(i)}
+                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm font-bold transition-all ${activeService === i ? 'bg-trust-navy text-white border-trust-navy' : 'bg-white text-on-surface-variant border-outline-variant hover:border-trust-navy'}`}
+                                    >
+                                        <span class="material-symbols-outlined text-base">{s.icon}</span>
+                                        {s.title}
+                                    </button>
+                                ))}
+                            </div>
+                            {/* Active Service Detail */}
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white border border-outline-variant rounded-2xl p-8 lg:p-12 shadow-sm">
+                                <div class="space-y-6">
+                                    <div className={`inline-flex items-center gap-2 ${current.color} text-white px-4 py-2 rounded-full text-sm font-bold`}>
+                                        <span class="material-symbols-outlined text-base">{current.icon}</span>
+                                        {current.title}
+                                    </div>
+                                    <h3 class="font-headline-lg text-trust-navy">{current.tagline}</h3>
+                                    <p class="font-body-lg text-on-surface-variant">{current.desc}</p>
+                                    <ul class="space-y-3">
+                                        {current.bullets.map(b => (
+                                            <li key={b} class="flex items-center gap-3 text-on-surface-variant">
+                                                <span class="material-symbols-outlined text-conversion-orange text-base">check_circle</span>
+                                                {b}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Link to="/contact" class="inline-flex items-center gap-2 bg-conversion-orange text-white px-8 py-4 rounded font-cta-text text-cta-text hover:brightness-110 transition-all mt-2">
+                                        Get Started <span class="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                </div>
+                                <div class="bg-surface-container-low rounded-xl p-10 flex flex-col items-center justify-center min-h-64 border border-outline-variant">
+                                    <span className={`material-symbols-outlined text-8xl mb-6 ${activeService % 2 === 0 ? 'text-conversion-orange' : 'text-trust-navy'}`} style={{fontSize:'96px'}}>{current.icon}</span>
+                                    <div class="text-center">
+                                        <p class="font-headline-md text-trust-navy mb-1">{current.title}</p>
+                                        <p class="text-on-surface-variant text-sm">Expert Ecommerce Solution</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* All Services Grid */}
+                    <section class="py-section-gap bg-trust-navy text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-12">
+                                <h2 class="font-headline-lg text-headline-lg mb-3">Everything Under One Roof</h2>
+                                <p class="text-on-primary-container max-w-2xl mx-auto">We manage every corner of your eCommerce business across multiple platforms.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {[
-                                    { q: "How do I get started?", a: "Book a call to assess needs, then ship samples to our studio." },
-                                    { q: "Do you need a sample?", a: "Yes, for creative packages to ensure high-quality output." },
-                                    { q: "Production timeline?", a: "Typically 3-4 weeks from receiving samples." }
-                                ].map((item, idx) => (
+                                    { icon: 'inventory_2', title: 'Amazon Wholesale FBA', desc: 'End-to-end FBA automation from sourcing to fulfillment.' },
+                                    { icon: 'label', title: 'Amazon Private Label', desc: 'Build and scale your own branded Amazon products.' },
+                                    { icon: 'storefront', title: 'Account Management', desc: 'Full account setup, registration, and ongoing health management.' },
+                                    { icon: 'ads_click', title: 'PPC & Advertising', desc: 'Certified Sponsored Ads, DSP, and video campaign management.' },
+                                    { icon: 'list_alt', title: 'Listing & SEO', desc: 'Keyword-optimized listings with A+ content and imagery.' },
+                                    { icon: 'support_agent', title: 'Virtual Assistants', desc: 'Trained VAs managing orders, support, and daily operations.' },
+                                    { icon: 'local_mall', title: 'Walmart Automation', desc: 'Product listings, order processing, and store management.' },
+                                    { icon: 'palette', title: 'Etsy Automation', desc: 'Complete Etsy store setup, uploads, and order management.' },
+                                    { icon: 'shopping_bag', title: 'eBay Automation', desc: 'Listings, fulfillment, and customer service on eBay.' },
+                                ].map(s => (
+                                    <div key={s.title} class="group p-6 border border-white/10 rounded-xl hover:bg-white/5 transition-all flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-conversion-orange text-3xl flex-shrink-0 mt-1">{s.icon}</span>
+                                        <div>
+                                            <h4 class="font-bold text-white mb-1">{s.title}</h4>
+                                            <p class="text-on-primary-container text-sm">{s.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section class="py-section-gap bg-surface-gray scroll-reveal">
+                        <div class="max-w-3xl mx-auto px-gutter">
+                            <div class="text-center mb-12">
+                                <span class="font-label-caps text-label-caps text-secondary mb-2 block">SUPPORT</span>
+                                <h2 class="font-headline-lg text-trust-navy">Frequent Queries From Amazon Store Owners</h2>
+                            </div>
+                            <div class="space-y-4">
+                                {faqs.map((item, idx) => (
                                     <div key={idx} class="bg-white border border-outline-variant rounded-xl overflow-hidden">
-                                        <button 
-                                            class="w-full px-8 py-6 text-left flex justify-between items-center"
+                                        <button
+                                            class="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
                                             onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                                         >
-                                            <span class="font-headline-md text-trust-navy">{item.q}</span>
-                                            <span class={`material-symbols-outlined transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}>expand_more</span>
+                                            <span class="font-bold text-trust-navy">{item.q}</span>
+                                            <span className={`material-symbols-outlined flex-shrink-0 transition-transform text-conversion-orange ${openFaq === idx ? 'rotate-180' : ''}`}>expand_more</span>
                                         </button>
-                                        {openFaq === idx && <div class="px-8 pb-6 text-on-surface-variant">{item.a}</div>}
+                                        {openFaq === idx && <div class="px-8 pb-6 text-on-surface-variant leading-relaxed">{item.a}</div>}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Banner */}
+                    <section class="py-20 bg-conversion-orange text-white scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter text-center">
+                            <h2 class="font-headline-lg text-headline-lg mb-4">Ready to Build Your Automated eCommerce Business?</h2>
+                            <p class="mb-8 opacity-90 max-w-xl mx-auto">From first-time sellers to enterprise brands — Expert Ecommerce Solution manages everything so you can focus on growth.</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link to="/contact" class="bg-white text-conversion-orange px-10 py-4 font-cta-text text-cta-text rounded hover:bg-opacity-90 transition-all inline-flex items-center gap-2 justify-center">
+                                    Create E-Commerce Store <span class="material-symbols-outlined">arrow_forward</span>
+                                </Link>
+                                <Link to="/packages" class="border-2 border-white text-white px-10 py-4 font-cta-text text-cta-text rounded hover:bg-white/10 transition-all inline-flex items-center gap-2 justify-center">
+                                    View Packages
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
+
+        const PackagesPage = () => {
+            const [activeTab, setActiveTab] = useState('amazon');
+            const [billingCycle, setBillingCycle] = useState('monthly');
+            useScrollReveal();
+
+            const packageData = {
+                amazon: [
+                    {
+                        name: 'Starter',
+                        badge: null,
+                        price: { monthly: 149, yearly: 119 },
+                        description: 'Perfect for new sellers looking to launch on Amazon.',
+                        features: [
+                            'Amazon Seller Account Setup',
+                            'Up to 20 Product Listings',
+                            'Basic SEO Optimization',
+                            'Brand Registry Assistance',
+                            '1 Month Support',
+                            'Monthly Performance Report',
+                        ],
+                        cta: 'Get Started',
+                        highlight: false,
+                    },
+                    {
+                        name: 'Growth',
+                        badge: 'Most Popular',
+                        price: { monthly: 299, yearly: 239 },
+                        description: 'For established sellers ready to scale their Amazon business.',
+                        features: [
+                            'Everything in Starter',
+                            'Up to 100 Product Listings',
+                            'Advanced PPC Campaign Setup',
+                            'A+ Content Creation (5 ASINs)',
+                            'Storefront Design',
+                            'Competitor Analysis',
+                            'Bi-weekly Strategy Calls',
+                            '3 Months Priority Support',
+                        ],
+                        cta: 'Get Started',
+                        highlight: true,
+                    },
+                    {
+                        name: 'Enterprise',
+                        badge: null,
+                        price: { monthly: 599, yearly: 479 },
+                        description: 'Full-service Amazon management for high-volume sellers.',
+                        features: [
+                            'Everything in Growth',
+                            'Unlimited Product Listings',
+                            'Full Account Management',
+                            'A+ Content (Unlimited ASINs)',
+                            'Video Ads Creation',
+                            'DSP Advertising',
+                            'Dedicated Account Manager',
+                            'Weekly Strategy Calls',
+                            'Priority 24/7 Support',
+                        ],
+                        cta: 'Contact Us',
+                        highlight: false,
+                    },
+                ],
+                wholesale: [
+                    {
+                        name: 'Basic FBA',
+                        badge: null,
+                        price: { monthly: 199, yearly: 159 },
+                        description: 'Start your Amazon Wholesale FBA journey with expert guidance.',
+                        features: [
+                            'Wholesale Supplier Research',
+                            'Up to 10 SKUs Sourced',
+                            'FBA Shipment Setup',
+                            'Inventory Management',
+                            'Monthly Reporting',
+                        ],
+                        cta: 'Get Started',
+                        highlight: false,
+                    },
+                    {
+                        name: 'Pro FBA',
+                        badge: 'Best Value',
+                        price: { monthly: 449, yearly: 359 },
+                        description: 'Scale your wholesale operation with full automation support.',
+                        features: [
+                            'Everything in Basic FBA',
+                            'Up to 50 SKUs Sourced',
+                            'Brand Approval Assistance',
+                            'Repricing Strategy',
+                            'PPC Campaign Management',
+                            'Bi-weekly Account Review',
+                            'Dedicated Sourcing Specialist',
+                        ],
+                        cta: 'Get Started',
+                        highlight: true,
+                    },
+                    {
+                        name: 'Elite FBA',
+                        badge: null,
+                        price: { monthly: 799, yearly: 639 },
+                        description: 'End-to-end wholesale automation for maximum passive income.',
+                        features: [
+                            'Everything in Pro FBA',
+                            'Unlimited SKUs',
+                            'Full Account Automation',
+                            'Multi-Marketplace Expansion',
+                            'Custom Brand Relationships',
+                            'Weekly Calls + 24/7 Support',
+                        ],
+                        cta: 'Contact Us',
+                        highlight: false,
+                    },
+                ],
+                privatelabel: [
+                    {
+                        name: 'Launch',
+                        badge: null,
+                        price: { monthly: 299, yearly: 239 },
+                        description: 'Build your private label brand from the ground up.',
+                        features: [
+                            'Product Research (1 Product)',
+                            'Supplier Sourcing',
+                            'Brand Name & Logo Design',
+                            'Listing Creation & SEO',
+                            'Launch Strategy',
+                        ],
+                        cta: 'Get Started',
+                        highlight: false,
+                    },
+                    {
+                        name: 'Scale',
+                        badge: 'Recommended',
+                        price: { monthly: 599, yearly: 479 },
+                        description: 'Grow your private label brand with advanced strategies.',
+                        features: [
+                            'Everything in Launch',
+                            'Up to 3 Products',
+                            'A+ Content & Brand Store',
+                            'PPC Campaign Management',
+                            'Review & Rating Strategy',
+                            'Competitor Tracking',
+                        ],
+                        cta: 'Get Started',
+                        highlight: true,
+                    },
+                    {
+                        name: 'Dominate',
+                        badge: null,
+                        price: { monthly: 999, yearly: 799 },
+                        description: 'Full private label management with aggressive growth.',
+                        features: [
+                            'Everything in Scale',
+                            'Up to 10 Products',
+                            'Video Content Production',
+                            'International Expansion',
+                            'Influencer Outreach',
+                            'Dedicated Brand Manager',
+                        ],
+                        cta: 'Contact Us',
+                        highlight: false,
+                    },
+                ],
+            };
+
+            const tabs = [
+                { id: 'amazon', label: 'Amazon Seller', icon: 'storefront' },
+                { id: 'wholesale', label: 'Wholesale FBA', icon: 'inventory_2' },
+                { id: 'privatelabel', label: 'Private Label', icon: 'label' },
+            ];
+
+            const currentPackages = packageData[activeTab];
+
+            return (
+                <main class="min-h-screen">
+                    {/* Hero */}
+                    <section class="bg-trust-navy py-20 text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter text-center">
+                            <span class="font-label-caps text-label-caps text-conversion-orange mb-4 block tracking-widest">TRANSPARENT PRICING</span>
+                            <h1 class="font-headline-xl text-headline-xl mb-6">Choose the Right Package<br/>for Your Business</h1>
+                            <p class="text-on-primary-container max-w-2xl mx-auto text-lg mb-10">Flexible plans for every stage of your Amazon journey — from first-time sellers to enterprise brands.</p>
+                            {/* Billing Toggle */}
+                            <div class="inline-flex items-center gap-4 bg-white/10 p-1.5 rounded-full">
+                                <button
+                                    onClick={() => setBillingCycle('monthly')}
+                                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${billingCycle === 'monthly' ? 'bg-conversion-orange text-white' : 'text-on-primary-container hover:text-white'}`}
+                                >Monthly</button>
+                                <button
+                                    onClick={() => setBillingCycle('yearly')}
+                                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${billingCycle === 'yearly' ? 'bg-conversion-orange text-white' : 'text-on-primary-container hover:text-white'}`}
+                                >Yearly <span class="text-success-mint text-xs ml-1">Save 20%</span></button>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Tab Selector */}
+                    <section class="bg-surface-container-low border-b border-outline-variant sticky top-20 z-40">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="flex overflow-x-auto gap-1 py-2">
+                                {tabs.map(tab => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className={`flex items-center gap-2 px-6 py-3 rounded font-bold text-sm whitespace-nowrap transition-all ${activeTab === tab.id ? 'bg-trust-navy text-white' : 'text-on-surface-variant hover:text-trust-navy hover:bg-surface-container'}`}
+                                    >
+                                        <span class="material-symbols-outlined text-base">{tab.icon}</span>
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Pricing Cards */}
+                    <section class="py-section-gap bg-surface scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {currentPackages.map((pkg) => (
+                                    <div key={pkg.name} className={`relative flex flex-col rounded-2xl border-2 overflow-hidden transition-all hover:shadow-2xl ${pkg.highlight ? 'border-conversion-orange shadow-xl shadow-conversion-orange/10 scale-105' : 'border-outline-variant'}`}>
+                                        {pkg.badge && (
+                                            <div class="bg-conversion-orange text-white text-xs font-bold text-center py-2 tracking-widest uppercase">{pkg.badge}</div>
+                                        )}
+                                        <div className={`p-8 flex-1 flex flex-col ${pkg.highlight ? 'bg-trust-navy text-surface-bright' : 'bg-white'}`}>
+                                            <h3 className={`font-headline-md text-headline-md mb-2 ${pkg.highlight ? 'text-white' : 'text-trust-navy'}`}>{pkg.name}</h3>
+                                            <p className={`text-sm mb-6 ${pkg.highlight ? 'text-on-primary-container' : 'text-on-surface-variant'}`}>{pkg.description}</p>
+                                            <div class="mb-8">
+                                                <span className={`text-5xl font-black ${pkg.highlight ? 'text-conversion-orange' : 'text-trust-navy'}`}>${billingCycle === 'monthly' ? pkg.price.monthly : pkg.price.yearly}</span>
+                                                <span className={`text-sm ml-1 ${pkg.highlight ? 'text-on-primary-container' : 'text-on-surface-variant'}`}>/mo</span>
+                                                {billingCycle === 'yearly' && <div class="text-xs text-success-mint mt-1">Billed annually</div>}
+                                            </div>
+                                            <ul class="space-y-3 mb-10 flex-1">
+                                                {pkg.features.map(f => (
+                                                    <li key={f} class="flex items-start gap-3 text-sm">
+                                                        <span className={`material-symbols-outlined text-base mt-0.5 flex-shrink-0 ${pkg.highlight ? 'text-success-mint' : 'text-conversion-orange'}`}>check_circle</span>
+                                                        <span className={pkg.highlight ? 'text-on-primary-container' : 'text-on-surface-variant'}>{f}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <Link
+                                                to="/contact"
+                                                className={`block w-full text-center py-4 font-cta-text text-cta-text rounded transition-all ${pkg.highlight ? 'bg-conversion-orange text-white hover:brightness-110' : 'border-2 border-trust-navy text-trust-navy hover:bg-trust-navy hover:text-white'}`}
+                                            >{pkg.cta}</Link>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Custom Plan Banner */}
+                    <section class="py-20 bg-trust-navy text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter text-center">
+                            <span class="material-symbols-outlined text-5xl text-conversion-orange mb-6 block">workspace_premium</span>
+                            <h2 class="font-headline-lg text-headline-lg mb-4">Need a Custom Plan?</h2>
+                            <p class="text-on-primary-container max-w-xl mx-auto mb-8">Every business is different. Let's build a package tailored specifically to your products, goals, and budget.</p>
+                            <Link to="/contact" class="inline-flex items-center gap-2 bg-conversion-orange text-white px-10 py-4 font-cta-text text-cta-text hover:brightness-110 transition-all rounded">
+                                Talk to an Expert <span class="material-symbols-outlined">arrow_forward</span>
+                            </Link>
+                        </div>
+                    </section>
+
+                    {/* Why Choose Section */}
+                    <section class="py-section-gap bg-surface-gray scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-12">
+                                <h2 class="font-headline-lg text-trust-navy mb-4">What's Included in Every Package</h2>
+                                <p class="text-on-surface-variant max-w-2xl mx-auto">No hidden fees. No lock-in contracts. Just transparent, results-driven service.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {[
+                                    { icon: 'support_agent', title: 'Dedicated Support', desc: 'A real specialist managing your account and answering your queries.' },
+                                    { icon: 'verified', title: 'ATES Certified', desc: 'Official Amazon Trained E-Commerce Specialist managing your account.' },
+                                    { icon: 'bar_chart', title: 'Regular Reporting', desc: 'Detailed performance reports sent directly to your inbox.' },
+                                    { icon: 'lock', title: 'Data Security', desc: 'Your business data is fully protected with enterprise-grade security.' },
+                                ].map(item => (
+                                    <div key={item.title} class="bg-white p-8 border border-outline-variant rounded-xl hover:border-conversion-orange transition-all">
+                                        <span class="material-symbols-outlined text-3xl text-conversion-orange mb-4 block">{item.icon}</span>
+                                        <h4 class="font-headline-md text-trust-navy mb-2">{item.title}</h4>
+                                        <p class="text-on-surface-variant text-sm">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>
@@ -566,11 +1045,11 @@
                                 <div class="bg-white p-10 border border-outline-variant shadow-sm space-y-8">
                                     <div class="flex items-start gap-4">
                                         <span class="material-symbols-outlined text-conversion-orange text-3xl">phone_in_talk</span>
-                                        <div><h3 class="font-headline-md mb-2">Speak With Us</h3><p class="font-bold">+91 7835060070</p></div>
+                                        <div><h3 class="font-headline-md mb-2">Speak With Us</h3><p class="font-bold">+91 9560541200</p></div>
                                     </div>
                                     <div class="flex items-start gap-4">
                                         <span class="material-symbols-outlined text-conversion-orange text-3xl">mail</span>
-                                        <div><h3 class="font-headline-md mb-2">Email Inquiry</h3><p class="font-bold">info@amazonates.com</p></div>
+                                        <div><h3 class="font-headline-md mb-2">Email Inquiry</h3><p class="font-bold">expertecommercesolution2023.com</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -611,6 +1090,7 @@
                         <Route path="/" element={<HomePage />} />
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/services" element={<ServicesPage />} />
+                        <Route path="/packages" element={<PackagesPage />} />
                         <Route path="/contact" element={<ContactPage />} />
                     </Routes>
                     <Footer />
