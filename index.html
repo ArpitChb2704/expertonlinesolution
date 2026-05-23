@@ -412,65 +412,215 @@
 
         const AboutPage = () => {
             useScrollReveal();
+
+            const coreServices = [
+                { icon: 'app_registration', label: 'Seller Account Registration & Setup' },
+                { icon: 'storefront', label: 'Marketplace Onboarding & Compliance' },
+                { icon: 'list_alt', label: 'Product Listing & Catalog Management' },
+                { icon: 'brand_awareness', label: 'Brand Store Setup & Optimization' },
+                { icon: 'manage_accounts', label: 'Account Management & Operational Support' },
+                { icon: 'school', label: 'Marketplace Training & Consultation' },
+                { icon: 'local_shipping', label: 'Logistics & Fulfillment Guidance' },
+                { icon: 'query_stats', label: 'Product Research & Market Analysis' },
+                { icon: 'ads_click', label: 'Advertising & Business Growth Strategies' },
+                { icon: 'public', label: 'International Marketplace Expansion' },
+            ];
+
+            const platforms = [
+                { icon: 'inventory_2', name: 'Amazon', color: 'text-conversion-orange' },
+                { icon: 'shopping_bag', name: 'eBay', color: 'text-trust-navy' },
+                { icon: 'palette', name: 'Etsy', color: 'text-conversion-orange' },
+                { icon: 'local_mall', name: 'Walmart', color: 'text-trust-navy' },
+                { icon: 'public', name: 'Global Platforms', color: 'text-conversion-orange' },
+            ];
+
+            const supportChannels = [
+                { icon: 'people', label: 'One-on-One Business Consultations' },
+                { icon: 'mail', label: 'Email & Ticket Support' },
+                { icon: 'phone_in_talk', label: 'Phone & WhatsApp Assistance' },
+                { icon: 'videocam', label: 'Google Meet & Zoom Sessions' },
+                { icon: 'desktop_windows', label: 'Remote Desktop Support' },
+                { icon: 'bolt', label: 'Real-Time Operational Guidance' },
+            ];
+
+            const stats = [
+                { num: '13+', label: 'Years of Experience', icon: 'history' },
+                { num: '10,000+', label: 'Sellers Supported', icon: 'groups' },
+                { num: 'ATES', label: 'Pilot Batch Certified', icon: 'verified' },
+                { num: 'Multi', label: 'Platform Coverage', icon: 'public' },
+            ];
+
             return (
                 <main>
+                    {/* Hero */}
                     <section class="relative bg-trust-navy py-20 lg:py-32 overflow-hidden scroll-reveal">
                         <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div class="space-y-6">
-                                <span class="inline-block bg-conversion-orange text-white px-3 py-1 font-label-caps text-label-caps">Amazon Trained Specialists</span>
-                                <h1 class="font-headline-xl text-headline-xl text-white">Selling on Amazon Was Never So Easy</h1>
-                                <p class="font-body-lg text-body-lg text-primary-fixed-dim opacity-90 max-w-lg">
-                                    ExpertGuide is introduced by Amazon to provide constant efforts to help Amazon sellers scale their online business.
+                            <div class="space-y-6 relative z-10">
+                                <span class="inline-block bg-conversion-orange text-white px-3 py-1 font-label-caps text-label-caps tracking-widest">Your Trusted E-Commerce Growth Partner</span>
+                                <h1 class="font-headline-xl text-headline-xl text-white leading-tight">Empowering Businesses to <span class="text-conversion-orange">Succeed Online</span></h1>
+                                <p class="font-body-lg text-body-lg text-on-primary-container max-w-lg">
+                                    Founded by Neeraj Arora, we have been actively supporting online sellers since 2013 — with a strong focus on marketplace growth, seller success, and long-term business development.
                                 </p>
+                                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                    <Link to="/contact" class="bg-conversion-orange text-white px-8 py-4 rounded font-cta-text text-cta-text flex items-center gap-2 justify-center hover:brightness-110 transition-all">
+                                        Work With Us <span class="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                    <Link to="/services" class="border border-white/30 text-white px-8 py-4 rounded font-cta-text text-cta-text flex items-center gap-2 justify-center hover:bg-white/10 transition-all">
+                                        Our Services
+                                    </Link>
+                                </div>
                             </div>
-                            <div class="relative group">
-                                <img alt="Our Team" class="relative rounded-xl w-full h-[400px] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8swlV3pRVa3Yp_g4L4jC_3-HUxjU8AK0bC8C5pSRzZ5DrM3E4a5cUWXjFD22VCXEgnrtW7urWSYAoFJK1SLpPMKKZGSzc0Ku6TOBHw9KYDqfID4-JJ2yFATX8tDxk2f19hewY8e2BMCtHwnEtNR1MDt1l3ZIINMmpUrPpgCFjVRYaLgVW4T_kCISDfnBM5Z8nBE5SkdxFT5hyV8S1K9YG9lZFbuEFj_v_CacIWqC2oZ58DT0xe60sxQKzD4pkO3RLtN98ABPEQ28"/>
+                            <div class="relative hidden lg:block">
+                                <img alt="Our Team" class="rounded-xl w-full h-[420px] object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8swlV3pRVa3Yp_g4L4jC_3-HUxjU8AK0bC8C5pSRzZ5DrM3E4a5cUWXjFD22VCXEgnrtW7urWSYAoFJK1SLpPMKKZGSzc0Ku6TOBHw9KYDqfID4-JJ2yFATX8tDxk2f19hewY8e2BMCtHwnEtNR1MDt1l3ZIINMmpUrPpgCFjVRYaLgVW4T_kCISDfnBM5Z8nBE5SkdxFT5hyV8S1K9YG9lZFbuEFj_v_CacIWqC2oZ58DT0xe60sxQKzD4pkO3RLtN98ABPEQ28"/>
+                                <div class="absolute -bottom-6 -left-6 bg-conversion-orange text-white p-6 rounded-xl shadow-xl">
+                                    <div class="font-black text-3xl">2013</div>
+                                    <div class="text-sm opacity-90">Est. Year</div>
+                                </div>
                             </div>
                         </div>
                     </section>
 
+                    {/* Stats Bar */}
+                    <section class="bg-conversion-orange py-10 scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 lg:grid-cols-4 gap-8">
+                            {stats.map(s => (
+                                <div key={s.label} class="text-center text-white">
+                                    <span class="material-symbols-outlined text-3xl mb-2 block opacity-80">{s.icon}</span>
+                                    <div class="font-black text-2xl lg:text-3xl">{s.num}</div>
+                                    <div class="text-sm opacity-90 mt-1">{s.label}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Who We Are */}
                     <section class="py-section-gap bg-surface-gray scroll-reveal">
                         <div class="max-w-container-max mx-auto px-gutter">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                                <div>
-                                    <h2 class="font-headline-lg text-headline-lg text-trust-navy mb-4">Your Amazon Dream Team</h2>
-                                    <p class="font-body-lg text-body-lg text-on-surface-variant">
-                                        With a dedicated team of over 150+ specialists, we manage every single facet of your Amazon presence.
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                                <div class="space-y-6">
+                                    <span class="font-label-caps text-label-caps text-conversion-orange tracking-widest block">WHO WE ARE</span>
+                                    <h2 class="font-headline-lg text-trust-navy">13+ Years of Marketplace Expertise</h2>
+                                    <p class="font-body-lg text-on-surface-variant">
+                                        As a part of the pilot batch of the Amazon Trained E-Commerce Specialist (ATES) program, our founder Neeraj Arora brings over a decade of practical marketplace experience and deep industry knowledge.
+                                    </p>
+                                    <p class="font-body-lg text-on-surface-variant">
+                                        Over the years, we have built a dedicated team of e-commerce professionals committed to helping businesses establish and expand their presence across leading online marketplaces in India and globally. Our approach is focused on providing reliable guidance, transparent support, and practical solutions tailored to each seller's business goals.
+                                    </p>
+                                    <p class="font-body-lg text-on-surface-variant">
+                                        With more than 13 years of experience, we have successfully onboarded and supported <span class="font-bold text-trust-navy">10,000+ sellers</span> across India and international marketplaces — from small startups to established brands.
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 border-l-4 border-conversion-orange pl-6">
-                                    <span class="font-headline-xl text-headline-xl text-trust-navy">150+</span>
-                                    <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">In-house<br/>Specialists</span>
-                                </div>
-                            </div>
-                            <div className="bento-grid-v2 grid grid-cols-1 md:grid-cols-12 gap-6">
-                                <div className="md:col-span-8 bg-white p-8 border border-outline-variant">
-                                    <h3 class="font-headline-md text-trust-navy mb-4">Data Driven Creatives</h3>
-                                    <p class="text-on-surface-variant">Our designs increase conversion rates by 20% on average.</p>
-                                </div>
-                                <div className="md:col-span-4 bg-trust-navy p-8 text-white flex flex-col justify-center items-center">
-                                    <div class="text-conversion-orange font-headline-xl text-headline-xl mb-2">20%</div>
-                                    <div class="font-label-caps text-label-caps opacity-80">Avg. Increase</div>
+                                <div class="space-y-4">
+                                    <h3 class="font-headline-md text-trust-navy mb-6">Our Services Include</h3>
+                                    <div class="grid grid-cols-1 gap-3">
+                                        {coreServices.map(s => (
+                                            <div key={s.label} class="flex items-center gap-4 bg-white border border-outline-variant rounded-xl px-5 py-4 hover:border-conversion-orange transition-all">
+                                                <span class="material-symbols-outlined text-conversion-orange flex-shrink-0">{s.icon}</span>
+                                                <span class="text-on-surface-variant text-sm font-medium">{s.label}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
+                    {/* Founder Section */}
                     <section class="py-section-gap bg-white scroll-reveal">
                         <div class="max-w-container-max mx-auto px-gutter">
                             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                                <div class="lg:col-span-5">
-                                    <img alt="Founder" class="rounded-lg shadow-xl" src="Neeraj Pic01.png"/>
-                                </div>
-                                <div class="lg:col-span-7">
-                                    <h2 class="font-headline-lg text-trust-navy mb-6">A Message to Sellers</h2>
-                                    <p class="font-body-lg text-on-surface-variant mb-4 italic">"Scaling an Amazon business isn't easy. We understand these challenges because we live them every day."</p>
-                                    <p class="font-body-lg text-on-surface-variant">As an ATES specialist, I created ExpertGuide to offer the best service plans.</p>
-                                    <div class="mt-8">
-                                        <p class="font-bold text-trust-navy">Neeraj Arora</p>
-                                        <p class="text-sm opacity-60">Founder & Lead Specialist</p>
+                                <div class="lg:col-span-4">
+                                    <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+                                        <div class="w-36 h-36 rounded-xl overflow-hidden border-4 border-conversion-orange shadow-lg">
+                                            <img src="Neeraj Pic01.png" alt="Neeraj Arora" class="w-full h-full object-cover object-top" />
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-xl text-trust-navy">Neeraj Arora</p>
+                                            <p class="text-sm text-on-surface-variant mt-1">Founder & Lead Specialist</p>
+                                            <span class="inline-block mt-3 bg-conversion-orange/10 text-conversion-orange font-label-caps text-label-caps px-3 py-1 rounded">ATES Pilot Batch</span>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="lg:col-span-8 space-y-6">
+                                    <span class="font-label-caps text-label-caps text-conversion-orange tracking-widest block">FROM THE FOUNDER</span>
+                                    <h2 class="font-headline-lg text-trust-navy">A Message to Sellers</h2>
+                                    <p class="font-body-lg text-on-surface-variant italic border-l-4 border-conversion-orange pl-6">
+                                        "Scaling an online business isn't easy — the complexities of marketplaces, logistics, advertising, and compliance can be overwhelming. We understand these challenges because we live them every day alongside our sellers."
+                                    </p>
+                                    <p class="font-body-lg text-on-surface-variant">
+                                        As one of the first ATES (Amazon Trained E-Commerce Specialist) certified professionals in India, I founded Expert Ecommerce Solution with a single mission: to simplify the complexities of online selling and provide dependable, transparent support that allows business owners to focus on growth while we manage the marketplace processes efficiently.
+                                    </p>
+                                    <p class="font-body-lg text-on-surface-variant">
+                                        Whether you are an entrepreneur, manufacturer, retailer, or established brand — our door is always open to help you build a strong and profitable digital future.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Multi-Platform */}
+                    <section class="py-section-gap bg-trust-navy text-surface-bright scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                                <div class="space-y-6">
+                                    <span class="font-label-caps text-label-caps text-conversion-orange tracking-widest block">MULTI-PLATFORM SELLING</span>
+                                    <h2 class="font-headline-lg text-headline-lg">Complete Support Across All Major Marketplaces</h2>
+                                    <p class="font-body-lg text-on-primary-container">
+                                        In today's competitive online market, selling on multiple platforms is essential for business growth. Our team provides complete support for major national and international marketplaces — whether you are launching your first online store or scaling an existing business internationally.
+                                    </p>
+                                    <Link to="/contact" class="inline-flex items-center gap-2 bg-conversion-orange text-white px-8 py-4 rounded font-cta-text text-cta-text hover:brightness-110 transition-all">
+                                        Start Selling <span class="material-symbols-outlined">arrow_forward</span>
+                                    </Link>
+                                </div>
+                                <div class="grid grid-cols-1 gap-4">
+                                    {platforms.map(p => (
+                                        <div key={p.name} class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-6 py-4 hover:bg-white/10 transition-all">
+                                            <span className={`material-symbols-outlined text-2xl ${p.color}`}>{p.icon}</span>
+                                            <span class="font-bold text-white">{p.name}</span>
+                                            <span class="ml-auto material-symbols-outlined text-on-primary-container text-base">check_circle</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Personalized Support */}
+                    <section class="py-section-gap bg-surface-gray scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter">
+                            <div class="text-center mb-12">
+                                <span class="font-label-caps text-label-caps text-conversion-orange tracking-widest block mb-2">HOW WE SUPPORT YOU</span>
+                                <h2 class="font-headline-lg text-trust-navy">Personalized Support with a Professional Approach</h2>
+                                <p class="text-on-surface-variant max-w-2xl mx-auto mt-4">We understand that every business operates differently, which is why we offer flexible and personalized support based on your requirements and availability.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {supportChannels.map(c => (
+                                    <div key={c.label} class="bg-white border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:border-conversion-orange transition-all">
+                                        <div class="w-12 h-12 bg-conversion-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-conversion-orange">{c.icon}</span>
+                                        </div>
+                                        <span class="font-medium text-on-surface-variant">{c.label}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Mission CTA */}
+                    <section class="py-20 bg-conversion-orange text-white scroll-reveal">
+                        <div class="max-w-container-max mx-auto px-gutter text-center">
+                            <span class="material-symbols-outlined text-5xl mb-6 block opacity-80">rocket_launch</span>
+                            <h2 class="font-headline-lg text-headline-lg mb-4">Helping Businesses Build a Strong Digital Future</h2>
+                            <p class="opacity-90 max-w-2xl mx-auto mb-8 font-body-lg">
+                                Our mission remains the same — to help entrepreneurs, manufacturers, retailers, and brands establish a strong and profitable online presence with professional guidance, marketplace expertise, and dedicated seller support.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link to="/contact" class="bg-white text-conversion-orange px-10 py-4 rounded font-cta-text text-cta-text hover:bg-opacity-90 transition-all inline-flex items-center gap-2 justify-center">
+                                    Start Your Journey <span class="material-symbols-outlined">arrow_forward</span>
+                                </Link>
+                                <Link to="/services" class="border-2 border-white text-white px-10 py-4 rounded font-cta-text text-cta-text hover:bg-white/10 transition-all inline-flex items-center gap-2 justify-center">
+                                    Explore Services
+                                </Link>
                             </div>
                         </div>
                     </section>
